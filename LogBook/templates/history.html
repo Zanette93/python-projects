@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block main %}
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Deadline</th>
+                <th scope="col">Status</th>
+                <th scope="col">Description</th>
+                <th scope="col">Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in history_data %}
+                <tr>
+                    <td>{{ row["tasktitle"] }}</td>
+                    <td>{{ row["deadline"] }}</td>
+                    <td>{{ row["status"] }}</td>
+                    <td><a href="{{ url_for('description', id=row['id']) }}">See Description</a></td>
+                    <td>{{ row["username"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Leader
+{% endblock %}
+
+{% block main %}
+    <table class="table" table-bordered table-striped>
+        <thead class="thead-light">
+        </thead>
+        <tbody>
+            <form action="/leader" method="post">
+                <div>
+                        <label for="deadline">Deadline</label>
+                        <input type="date" name="deadline" id="deadline">
+                        <label for="tasktitle">Task</label>
+                        <input type="text" name="tasktitle" autocomplete="off" id="tasktitle">
+                        <p>
+                            <textarea class="textbox" name="description" placeholder="Which task do you need done?" autofocus="on" autocomplete="off"></textarea>
+                        </p>
+                </div>
+                <div>
+                    <button class="btn btn-primary" type="submit">Submit your task</button>
+                </div>
+            </form>
+        </tbody>
+    </table>
+{% endblock %}
+

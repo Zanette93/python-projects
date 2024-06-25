@@ -1,0 +1,17 @@
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+nav .navbar-brand .blue
+{
+    color: #0000ff;
+}
+
+.textbox
+{
+    width: 1150px;
+    height:500px;
+    resize: both;
+    overflow: auto;
+}

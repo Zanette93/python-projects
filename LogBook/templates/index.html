@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block main %}
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Deadline</th>
+                <th scope="col">Status</th>
+                <th scope="col">Description</th>
+                <th scope="col">Progress</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row, status_info in zipped_info %}
+            <tr>
+                <td>{{ row["tasktitle"] }}</td>
+                <td>{{ row["deadline"] }}</td>
+                <td style="{{ status_info.style }}">{{ status_info.status }}</td>
+                <td><a href="{{ url_for('description', id=row.id) }}">See Description</a></td>
+                <td><a href="{{ url_for('finished', id=row.id) }}">Finished</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
